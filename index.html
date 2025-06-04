@@ -12,6 +12,19 @@
             margin: 0;
             padding: 0;
         }
+        @media (max-width: 1200px) {
+        body {
+            transform: scale(0.85);
+            transform-origin: top center;
+        }
+        }
+        @media (max-width: 900px) {
+        body {
+            transform: scale(0.7);
+            transform-origin: top center;
+        }
+        }
+
         header {
             position: relative;
             background: none;
@@ -208,19 +221,32 @@
         a:hover {
             text-decoration: underline;
         }
-        .results-carousel {
+        /* .results-carousel {
             position: relative;
             width: 100%;
-            max-width: 1400px; /* Match container */
+            max-width: 1400px; 
             margin: 0 auto 0.5 rem auto;
             height: 405px;
             perspective: 1200px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            /* overflow-x: hidden; */
-            /* overflow-y: hidden; */
+            justify-content: center; 
+            overflow-x: hidden; 
+            overflow-y: hidden; 
             gap:0px
+        }  */
+          .results-carousel {
+            position: relative;
+            width: 100%;
+            max-width: 1400px; /* 最大宽度限制 */
+            margin: 0 auto 0.5rem auto;
+            /* aspect-ratio: 16 / 9; 保持视频宽高比，优先使用 */
+            perspective: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            overflow: hidden;
+            gap: 0px;
         }
         .carousel-cards {
             display: flex;
@@ -234,7 +260,7 @@
         .carousel-card {
             flex: 0 0 50%;
             max-width: 880px;
-            aspect-ratio: 16 / 9;
+            /* aspect-ratio: 16 / 9; */
             height: 340px;
             background: #23272f;
             border-radius: 16px;
@@ -259,7 +285,7 @@
             object-fit: cover;
             border-radius: 16px;
             background: #eee;
-            aspect-ratio: 16 / 9;
+            /* aspect-ratio: 16 / 9; */
         }
         .carousel-card.center {
             opacity: 1;
