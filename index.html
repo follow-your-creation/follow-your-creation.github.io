@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EasyCreator</title>
+    <title>Follow-Your-Creation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <style>
         body {
@@ -75,8 +75,9 @@
             font-size: 1.5rem;
         }
         .authors {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
         }
         .section {
             margin-bottom: 3.5rem;
@@ -100,9 +101,16 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-        .results-videos video, .results-videos iframe {
+        /* .results-videos video, .results-videos iframe {
             width: 280px;
             height: 180px;
+            border-radius: 8px;
+            background: #eee;
+        } */
+         .results-videos video, .results-videos iframe {
+            width: 100%;   /* 宽度撑满容器 */
+            height: auto;  /* 高度自动，保持视频比例 */
+            max-width: 280px;  /* 限制最大宽度 */
             border-radius: 8px;
             background: #eee;
         }
@@ -180,7 +188,7 @@
             }
             
             .authors {
-                font-size: 0.9rem;
+                font-size: 1.1rem;
             }
             
             .header-content {
@@ -362,39 +370,106 @@
         .video-wrapperthree:last-child {
         margin-left: -40px;   /* 右边往左推 */
         }
+        .video-bottom-caption {
+            display: block;  /* 或保留 inline-block 也可以 */
+            background-color: #23272f;
+            padding: 6px 16px;
+            border-radius: 20px;
+            color: #eee;
+            font-size: 1.1em;
+            font-weight: 500;
+            margin: 4px auto;  /* 👈 关键代码，自动左右居中 */
+            text-align: center;
+            width: 30%;
+        }
+        .video-bottom-captions {
+            display: block;
+            background-color: #23272f;
+            padding: 6px 16px;
+            border-radius: 20px;
+            color: #eee;
+            font-size: 1.1em;
+            font-weight: 500;
+            margin: 4px 0 4px 0; /* 上下4px，左右0px */
+            text-align: center;
+            width: 40%;
+            margin-left: 0;  /* 靠左对齐 */
+        }
+
+        .video-bottom-captionss {
+            display: block;
+            background-color: #23272f;
+            padding: 6px 16px;
+            border-radius: 20px;
+            color: #eee;
+            font-size: 1.1em;
+            font-weight: 500;
+            margin: 4px 0 4px auto;  /* 靠右对齐 */
+            text-align: center;
+            width: 40%;
+        }
+        .caption-row {
+            display: flex;
+            justify-content: space-between;  /* 或 space-evenly / center / start 等 */
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;  /* 可选，防止屏幕太窄时换行错位 */
+            gap: 8px;         /* 控制两个块之间的间距 */
+        }
+
+
     </style>
 </head>
 <body>
     <header>
-            <video class="header-bg-video" autoplay loop muted playsinline>
-                <source src="4DE_assets\hecheng (1).mp4" type="video/mp4">
+            <video class="header-bg-video" autoplay muted loop >
+                <source src="4DE_assets/hecheng (1).mp4" type="video/mp4">
             </video>
             <div class="header-overlay"></div>
             <div class="header-content">
-                <h1>EasyCreator: Empowering 4D Creation </h1>
+                <h1>Follow-Your-Creation: Empowering 4D Creation </h1>
                 <h1> through Video Inpainting</h1>
-                <div class="authors">
-                    <a href="https://github.com/mayuelala" target="_blank">Yue Ma</a><sup>1</sup>, &nbsp;
+            <div class="authors">
+                <a href="https://mayuelala.github.io/" target="_blank">Yue Ma</a><sup>1*</sup>, &nbsp;
+                <a href="https://github.com/fkyyyy" target="_blank">Kunyu Feng</a><sup>1*</sup>, &nbsp;
+                <a href="https://github.com/NXZXH" target="_blank">Xinhua Zhang</a><sup>4*</sup>, &nbsp;
+                <a href="https://scholar.google.com/citations?user=bLRjUzAAAAAJ&hl=en" target="_blank">Hongyu Liu</a><sup>1</sup>, <br>
+                <a href="https://junhaozhang98.github.io/" target="_blank">David Junhao Zhang</a><sup>3</sup>, &nbsp;
+                <a href="https://scholar.google.com/citations?user=ZB0gLU0AAAAJ&hl=en" target="_blank">Jinbo Xing</a><sup>5</sup>, &nbsp;
+                <a href="https://github.com/YinHan-Zhang" target="_blank">Yinhan Zhang</a><sup>2</sup>, &nbsp;
+                <a href="https://github.com/follow-your-creation" target="_blank">Ayden Yang</a><sup></sup>,&nbsp;
+                <a href="https://scholar.google.com/citations?user=q7NLPG0AAAAJ&hl=en" target="_blank">Zeyu Wang</a><sup>1,2✝</sup>,&nbsp;
+                <a href="https://scholar.google.com/citations?user=lLMX9hcAAAAJ&hl=en" target="_blank">Qifeng Chen</a><sup>1✝</sup> <br>
             </div>
-            <span style="font-size:0.95em;"><sup>1</sup>HKUST &nbsp;
-                    <br>
-                    <span style="font-size:0.95em;"><sup>*</sup> Equal Contribution</span>
-                    <br>
+            <span style="font-size:1.3em;"><sup>1</sup>HKUST &nbsp; <sup>2</sup>HKUST(GZ) &nbsp; <sup>3</sup>NUS &nbsp; <sup>4</sup>Tsinghua University &nbsp;<sup>5</sup>CUHK</span>
+                <br>
+                <span style="font-size:1.2em;"><sup>*</sup> Equal Contribution</span>
+                <span style="font-size:1.2em;"><sup>✝</sup> Corresponding Author</span>
+                <br>
+            <h3> arxiv </h3>
             <div>
-                    <a href="" target="_blank">[Paper]</a>
-                    &nbsp;|&nbsp;
-                    <a href="https://github.com/mayuelala/FollowYourCreation" target="_blank">[Code]</a>
+                <a href="https://github.com/follow-your-creation" target="_blank">[Paper]</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/follow-your-creation" target="_blank">[Code]</a>
             </div>
+        </div>
     </header>
     <div class="container">
         <div class="section">
             <h2>DEMO Video</h2>
             <div class="results-category">
                 <div style="display: flex; justify-content: center;">
-                    <video controls style="width: 100%; max-width: 1080px; aspect-ratio: 16/9; border-radius: 16px; background: #23272f; box-shadow: 0 8px 32px rgba(0,0,0,0.25);">
+                    <!-- <video controls style="width: 100%; max-width: 1080px; aspect-ratio: 16/9; border-radius: 16px; background: #23272f; box-shadow: 0 8px 32px rgba(0,0,0,0.25);">
                         <source src="4DE_assets/EasyCreator (1).mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/-PTLvbfSlw8?rel=0&autoplay=0&modestbranding=1&controls=1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        style="width: 100%; max-width: 1080px; aspect-ratio: 16/9; border-radius: 16px; background: #23272f; box-shadow: 0 8px 32px rgba(0,0,0,0.25);">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -419,7 +494,7 @@
                     </div>
                     </div>
                     <div class="video-wrapper">
-                        <div class="video-label">EasyCreator</div>
+                        <div class="video-label">Follow-Your-Creation</div>
                     <div class="carousel-card right ">
                     <video autoplay muted loop>
                         <source src="4DE_assets/miaowa1 (1).mp4" type="video/mp4">
@@ -427,6 +502,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + fin-like structure ... 
+                </div>
+
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left">
@@ -443,6 +522,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + blue wings ... 
+                </div>
+
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -459,6 +542,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + red can "CAT MEAT" ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left">
@@ -475,6 +562,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + a vibrant orange kayak ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left">
@@ -491,6 +582,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + bowknot and French fries ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left">
@@ -507,6 +602,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + wearing a hat and a green monk's clothe ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -523,6 +622,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + wears a gold hoop ... 
+                </div>
+                
             </div>
         </div>
         <div class="section">
@@ -538,7 +641,7 @@
                     </div>
                     </div>
                     <div class="video-wrapper">
-                        <div class="video-label">EasyCreator</div>
+                        <div class="video-label">Follow-Your-Creation</div>
                     <div class="carousel-card right ">
                     <video autoplay muted loop>
                         <source src="4DE_assets/dog1 (1).mp4" type="video/mp4">
@@ -546,6 +649,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + floating on a red donut ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -562,6 +669,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + over-ear headphones ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -578,6 +689,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + wearing sunglasses ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -594,6 +709,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + eating a meat ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -610,6 +729,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + red car ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -626,6 +749,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + holding a delicious hamburger ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -642,6 +769,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + green scarf ... 
+                </div>
+                
             </div>
         </div>
         <div class="section">
@@ -657,7 +788,7 @@
                     </div>
                     </div>
                     <div class="video-wrapper ">
-                        <div class="video-label">EasyCreator</div>
+                        <div class="video-label">Follow-Your-Creation</div>
                     <div class="carousel-card right ">
                     <video autoplay muted loop>
                         <source src="4DE_assets/niao1 (1).mp4" type="video/mp4">
@@ -665,6 +796,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + zoom out ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -681,6 +816,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + zoom in ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left ">
@@ -697,6 +836,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + steady shooting ... 
+                </div>
+                
                 <div class="results-carousel">
                     <div class="video-wrapper">
                     <div class="carousel-card left">
@@ -713,6 +856,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + camera turns right ... 
+                </div>
+                
             </div>
         </div>
         <div class="section">
@@ -720,7 +867,7 @@
                 <h3>Frozen Camera</h3>
                 <div class="results-carousel">
                     <div class="video-wrapperthree">
-                        <div class="video-label">EasyCreator-left</div>
+                        <div class="video-label">Follow-Your-Creation-left</div>
                     <div class="carousel-card left ">
                     <video autoplay muted loop>
                         <source src="4DE_assets/pandazuo (1).mp4" type="video/mp4">
@@ -736,7 +883,7 @@
                     </div>
                     </div>
                     <div class="video-wrapperthree">
-                        <div class="video-label">EasyCreator-right</div>
+                        <div class="video-label">Follow-Your-Creation-right</div>
                     <div class="carousel-card right ">
                     <video autoplay muted loop>
                         <source src="4DE_assets/pandayou (1).mp4" type="video/mp4">
@@ -744,6 +891,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="video-bottom-caption">
+                    ... + panda ... 
+                </div>
+
                 <div class="results-carousel">
                     <div class="video-wrapperthree">
                     <div class="carousel-card left ">
@@ -766,7 +917,16 @@
                     </video>
                     </div>
                     </div>
-                </div>
+                    </div>
+                    <div class="caption-row">
+                        <div class="video-bottom-captions">
+                            ... + same type of figurine and a robot ...  
+                        </div>
+                        <div class="video-bottom-captionss">
+                            ... + exhibits blue-and-white porcelain ...
+                        </div>
+                    </div>
+
                 <div class="results-carousel">
                     <div class="video-wrapperthree">
                     <div class="carousel-card left ">
@@ -790,6 +950,16 @@
                     </div>
                     </div>
                 </div>
+                <div class="caption-row">
+                    <div class="video-bottom-captions">
+                        ... + painting of sunflowers ...   
+                    </div>
+                    <div class="video-bottom-captionss">
+                        ... + robot dog ...
+                    </div>
+                </div>
+
+
                 <div class="results-carousel">
                     <div class="video-wrapperthree">
                     <div class="carousel-card left ">
@@ -813,28 +983,34 @@
                     </div>
                     </div>
                 </div>
+                <div class="caption-row">
+                    <div class="video-bottom-captions">
+                        ... + applauding audience ...   
+                    </div>
+                    <div class="video-bottom-captionss">
+                        ... + multiple freestanding cameras ...
+                    </div>
+                </div>
+
             </div>
          </div>
-         <div class="results-category">
-                <h2>Ethics</h2>
-                <div style="margin: 0 auto; font-size: 1.1rem; color: #ccc; background: #23272f; border-radius: 10px; padding: 1.5rem 2rem;">
-                    ddddddddddddddddddd
-                </div>
-            </div>
             <div class="results-category">
+                <div style="margin: 0 auto; font-size: 1.1rem; color: #ccc; background: #23272f; border-radius: 10px; padding: 1rem 1rem;">
+                    <p>
+                        💖Enjoyed this project? Drop a star ⭐<a href="https://github.com/follow-your-creation">follow-your-creation</a>⭐—it means a lot!<br><br>
+                        🚀Our project page is borrowed from <a href="https://dsaurus.github.io/isa4d/">ISA4D</a>.💡
+                    </p>
+                </div>
                 <h2>Citation</h2>
                 <div style="margin: 0 auto; font-size: 1.1rem; color: #ccc; background: #23272f; border-radius: 10px; padding: 1.5rem 2rem;">
-                    <b>Yue Ma</b><br>
-                    "EasyCreator: Empowering 4D Creation through Video Inpainting".<br>
-                    <i>ACM Trans. Graph. (Proc. dddddd) 2025.</i>
                     <pre style="background:#181818; color:#eee; border-radius:8px; padding:1em; margin-top:1em; font-size:0.95em; overflow-x:auto;">
-@article{dddddddddd,
-title={EasyCreator: Empowering 4D Creation through Video Inpainting},
-author=Yue Ma,
-journal={ddddddddddd},
-year={2025},
-publisher={ddddddddddd}
-}
+                        @article{
+                        title={Follow-Your-Creation: Empowering 4D Creation through Video Inpainting},
+                        author=
+                        journal={},
+                        year={},
+                        publisher={}
+                        }
                     </pre>
                 </div>
             </div>
