@@ -16,11 +16,7 @@ We have showcased some results of Follow-Your-Creation .
 
 More results can be found on our [Project page](https://follow-your-creation.github.io/).
 
-<style>
-  td {
-    width: 25%;  /* 确保每个 td 占据表格宽度的 25% */
-  }
-</style>
+
 
 <table>
   <tr>
